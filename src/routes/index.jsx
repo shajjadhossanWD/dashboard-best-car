@@ -9,6 +9,7 @@ import { RouteFallback } from './RouteFallback'
 const DashboardPage = lazy(() => import('@/features/dashboard/DashboardPage'))
 const ProductsPage = lazy(() => import('@/features/products/ProductsPage'))
 const SalesPage = lazy(() => import('@/features/sales/SalesPage'))
+const AiInsightsPage = lazy(() => import('@/features/ai/AiInsightsPage'))
 
 const lazyRoute = (Component) => (
   <Suspense fallback={<RouteFallback />}>
@@ -20,6 +21,7 @@ const BUILT_ROUTES = [
   { path: '/', element: lazyRoute(DashboardPage), index: true },
   { path: '/inventory/products', element: lazyRoute(ProductsPage) },
   { path: '/sales', element: lazyRoute(SalesPage) },
+  { path: '/ai/insights', element: lazyRoute(AiInsightsPage) },
 ]
 
 const builtPaths = new Set(BUILT_ROUTES.map((route) => route.path))

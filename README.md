@@ -1,10 +1,10 @@
-# BestCar — Admin Dashboard
+# BestCar - Admin Dashboard
 
 Store admin dashboard built with **React 18, Vite, Tailwind CSS and Redux Toolkit**,
 backed by a mock API layer.
 
 The charts, world map, dropdowns, date-range picker, table and pagination are all
-built in this repo — no charting library, UI kit or date-picker package. Total bundle
+built in this repo - no charting library, UI kit or date-picker package. Total bundle
 is roughly 114 kB gzipped.
 
 **Author:** shajjadhossanWD &lt;shajjadhossan111@gmail.com&gt;
@@ -26,9 +26,9 @@ randomly and exercise the error/retry states. See `.env.example`.
 
 | Route | Screen |
 |---|---|
-| `/` | Dashboard — KPIs, best sellers, recent transactions, sales analytics, sales by country |
-| `/inventory/products` | Products — full catalogue table (Best Seller "View All") |
-| `/sales` | Sales — full order table (Recent Transactions "View All") |
+| `/` | Dashboard - KPIs, best sellers, recent transactions, sales analytics, sales by country |
+| `/inventory/products` | Products - full catalogue table (Best Seller "View All") |
+| `/sales` | Sales - full order table (Recent Transactions "View All") |
 
 Every other sidebar link routes to a placeholder page, so navigation can be walked
 end to end.
@@ -49,7 +49,7 @@ end to end.
 
 **Products / Sales tables**
 
-- Debounced search, dimension filters, sortable columns and pagination — all handled
+- Debounced search, dimension filters, sortable columns and pagination - all handled
   in the API layer, not in the component.
 - Summary tiles that reflect the active filters.
 - The dashboard passes its date range through the URL on "View All", so the figures
@@ -98,7 +98,7 @@ src/
 
 **No hard-coded content.** Names, prices, greetings, store list, statuses and every
 figure come from the API layer. Moving to a real backend means rewriting the function
-bodies in `api/` — components, slices and hooks are untouched.
+bodies in `api/` - components, slices and hooks are untouched.
 
 **Deterministic mock data.** `mocks/db.js` derives each day's metrics from the date
 via a seeded PRNG, so any range produces consistent figures and a refetch never makes
@@ -119,8 +119,8 @@ and endpoint.
 **Server-shaped list contract.** List endpoints take `{ search, sortBy, sortDir, page,
 pageSize }` and return one page plus `{ total, pageCount, from, to }`.
 
-**Design tokens in `tailwind.config.js`.** Components use semantic names — `brand-500`,
-`ink-muted`, `line`, `surface-sunken` — rather than raw hex values.
+**Design tokens in `tailwind.config.js`.** Components use semantic names - `brand-500`,
+`ink-muted`, `line`, `surface-sunken` - rather than raw hex values.
 
 ## Charts
 
@@ -136,10 +136,10 @@ Plain SVG against a measured container:
 
 ## Responsive
 
-- `< 640px` — single column, sidebar becomes a drawer, tables become stacked card
+- `< 640px` - single column, sidebar becomes a drawer, tables become stacked card
   lists, chart height and tick density drop, summary tiles go 2-up and drop their icons.
-- `640–1279px` — two-column KPI row, full-width widgets, real tables.
-- `≥ 1280px` — three-column layout.
+- `640–1279px` - two-column KPI row, full-width widgets, real tables.
+- `≥ 1280px` - three-column layout.
 
 Dropdown panels measure themselves on open and shift back inside the viewport, so a
 card-header filter opens correctly at any width rather than only where its fixed

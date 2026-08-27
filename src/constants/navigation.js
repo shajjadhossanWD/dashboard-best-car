@@ -4,6 +4,7 @@ import {
   BadgeCheck,
   Barcode,
   BarChart3,
+  Brain,
   Boxes,
   Building2,
   CalendarX,
@@ -121,6 +122,11 @@ export const NAV_SECTIONS = [
       { id: 'stores', label: 'Stores', icon: Building2, to: '/people/stores' },
       { id: 'users', label: 'Users', icon: UserCog, to: '/people/users' },
     ],
+  },
+  {
+    id: 'ai',
+    title: 'AI',
+    items: [{ id: 'ai-insights', label: 'AI Insights', icon: Brain, to: '/ai/insights' }],
   },
   {
     id: 'system',
